@@ -5,28 +5,32 @@ import { useState, useEffect } from "react";
 type Props = {
   message: string;
   type?: "error" | "warning" | "success" | "info";
-  autoDismiss?: number; // in milliseconds
+  autoDismiss?: number;
   onDismiss?: () => void;
+  className?: string;
 };
 
-const Alert = ({ message, type = "error", autoDismiss, onDismiss }: Props) => {
+const Alert = ({
+  message,
+  type = "error",
+  autoDismiss,
+  onDismiss,
+  className,
+}: Props) => {
   const [visible, setVisible] = useState(true);
 
-  // Handle auto-dismissal
   useEffect(() => {
     if (autoDismiss && visible) {
       const timer = setTimeout(() => {
         setVisible(false);
         onDismiss?.();
       }, autoDismiss);
-
       return () => clearTimeout(timer);
     }
   }, [autoDismiss, visible, onDismiss]);
 
   if (!visible) return null;
 
-  // Color variants based on type
   const variants = {
     error: {
       bg: "bg-red-100",
@@ -63,7 +67,7 @@ const Alert = ({ message, type = "error", autoDismiss, onDismiss }: Props) => {
 
   return (
     <div
-      className={`flex items-center justify-between p-2.5 my-3 text-sm rounded-lg w-full ${currentVariant.bg} ${currentVariant.text} ${currentVariant.border}`}
+      className={`flex items-center justify-between p-2.5 my-3 text-sm rounded-lg w-full ${currentVariant.bg} ${currentVariant.text} ${currentVariant.border} ${className ?? ""}`}
       role="alert"
       aria-live="assertive"
     >
@@ -71,7 +75,6 @@ const Alert = ({ message, type = "error", autoDismiss, onDismiss }: Props) => {
         <GoAlertFill
           className={`${currentVariant.icon} mr-2`}
           size={20}
-          aria-hidden="true"
         />
         <div className="font-medium text-base">{message}</div>
       </div>
@@ -80,7 +83,7 @@ const Alert = ({ message, type = "error", autoDismiss, onDismiss }: Props) => {
         onClick={handleDismiss}
         aria-label="Close alert"
       >
-        <AiOutlineClose size={16} aria-hidden="true" />
+        <AiOutlineClose size={16} />
       </button>
     </div>
   );

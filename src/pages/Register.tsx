@@ -218,7 +218,7 @@ const Register = () => {
         </CardFooter>
       </Card>
 
-      <style jsx>{`
+      <style >{`
         @keyframes float-in {
           from {
             opacity: 0;

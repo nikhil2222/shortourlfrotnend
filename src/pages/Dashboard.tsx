@@ -5,8 +5,7 @@ import { useCreateUrl } from "@/hooks/useCreateUrl";
 import { 
   Button, 
   Card, 
-  CardBody, 
-  CardFooter, 
+  CardBody,  
   CardHeader, 
   Divider, 
   Input, 
@@ -16,9 +15,6 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { 
-  FaCopy 
-} from "react-icons/fa";
 import { 
   MdLink, 
   MdInfo, 
@@ -64,16 +60,12 @@ const Dashboard = () => {
         setIsSuccess(true);
         toast.success("URL shortened successfully! ✨");
       },
-      onError: (error) => {
+      onError: () => {
         toast.error("Failed to shorten URL. Try again.");
       },
     });
   };
 
-  const copyToClipboard = async (text: string) => {
-    await navigator.clipboard.writeText(text);
-    toast.success("Copied to clipboard!");
-  };
 
   useEffect(() => {
     if (isSuccess) {
@@ -152,7 +144,7 @@ const Dashboard = () => {
                 <DetailsCard 
                   urlData={urlData!} 
                   setIsSuccess={setIsSuccess}
-                  className="p-8"
+                  
                 />
               ) : (
                 <CardBody className="px-8 pb-12">
@@ -270,7 +262,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style >{`
         .group\/input {
           position: relative;
         }
