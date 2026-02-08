@@ -68,7 +68,7 @@ const Login = () => {
               Welcome Back
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 font-medium opacity-90">
-              Sign in to your Tinylink account
+              Sign in to your Short Your Link account
             </p>
           </div>
 
@@ -167,7 +167,7 @@ const Login = () => {
         
         <CardFooter className="px-8 md:px-12 pb-10 md:pb-12 pt-0">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-gray-600 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-inner w-full">
-            <p className="text-center sm:text-left">New to Tinylink?</p>
+            <p className="text-center sm:text-left">New to Short Your Link?</p>
             <Link
               className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:underline underline-offset-4 text-base px-4 py-2 rounded-lg hover:shadow-md"
               to="/register"

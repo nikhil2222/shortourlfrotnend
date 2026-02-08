@@ -72,7 +72,7 @@ const Register = () => {
         <CardBody className="px-6 md:px-8 pb-4 md:pb-6">
           <div className="text-center mb-8 md:mb-10">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 bg-clip-text text-transparent leading-tight drop-shadow-lg">
-              Join Tinylink
+              Join Short Your Link
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mt-4 font-medium opacity-90 max-w-sm mx-auto leading-relaxed">
               Create your account in seconds. Start shortening smarter.
