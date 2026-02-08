@@ -10,7 +10,7 @@ export const useUpdateUrl = () => {
 
   return useMutation({
     mutationFn: (data: FieldValues) => {
-      const updatePromise = axios.put(`http://localhost:8080/api/link/${data._id}`, data);
+      const updatePromise = axios.put(`https://shorturlbackend-zzyv.onrender.com/api/link/${data._id}`, data);
       toast.promise(
         updatePromise,
         {

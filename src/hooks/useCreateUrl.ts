@@ -9,7 +9,7 @@ export const useCreateUrl = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (data: FieldValues) => axios.post("http://localhost:8080/api/link", data),
+    mutationFn: (data: FieldValues) => axios.post("https://shorturlbackend-zzyv.onrender.com/api/link", data),
     onSuccess: (response) => {
       queryClient.invalidateQueries({ queryKey: ["urls"] });
       toast.success("Url Shortened successfully!");

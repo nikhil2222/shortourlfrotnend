@@ -9,7 +9,7 @@ export const useDeleteUrl = () => {
 
   return useMutation({
     mutationFn: (id: string) => {
-      const deletePromise = axios.delete(`http://localhost:8080/api/link/${id}`);
+      const deletePromise = axios.delete(`https://shorturlbackend-zzyv.onrender.com/api/link/${id}`);
       toast.promise(
         deletePromise,
         {

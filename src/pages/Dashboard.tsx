@@ -50,7 +50,7 @@ const Dashboard = () => {
   const { data: urls, isPending } = useQuery<Url[]>({
     queryKey: ["urls"],
     queryFn: async () => {
-      const { data } = await axios.get("http://localhost:8080/api/link");
+      const { data } = await axios.get("https://shorturlbackend-zzyv.onrender.com/api/link");
       return data;
     },
     refetchInterval: 5000,

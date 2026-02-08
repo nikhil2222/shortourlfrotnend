@@ -11,7 +11,7 @@ export const useSignup = () => {
   return useMutation({
     mutationFn: async (data: FieldValues) => {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/register",
+        "https://shorturlbackend-zzyv.onrender.com/api/auth/register",
         data,
         {
           headers: {

@@ -9,7 +9,7 @@ export const useLogin = () => {
   const { login } = useAuthStore();
 
   return useMutation({
-    mutationFn: (data: FieldValues) => axios.post("http://localhost:8080/api/auth/login", data),
+    mutationFn: (data: FieldValues) => axios.post("https://shorturlbackend-zzyv.onrender.com/api/auth/login", data),
     onSuccess: ({ data: { token } }) => {
       const { email, username }: DecodedToken = jwtDecode(token);
       toast.success(`Welcome ${username}!`);
